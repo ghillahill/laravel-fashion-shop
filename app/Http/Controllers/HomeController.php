@@ -9,7 +9,10 @@ use App\Dress;
 class HomeController extends Controller
 {
     public function index(){
-        $dresses = Dress::all();
-        return view('Home');
+        $my_dresses = Dress::all();
+        $data = [
+            'dresses' => $my_dresses
+        ];
+        return view('home', $data);
     }
 }

@@ -12,5 +12,16 @@
     </head>
     <body>
         <h1>Fashion Shop</h1>
+
+        <ul>
+            @foreach ($dresses as $dress)
+                <li>
+                    <p>{{$dress->brand}}</p>
+                    <p>Type: {{$dress->type}}</p>
+                    <p>Color: {{$dress->color}}</p>
+                </li>
+            @endforeach
+        </ul>
+
     </body>
 </html>
