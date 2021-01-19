@@ -6,22 +6,39 @@
 
         <title>Fashion Shop</title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link rel="stylesheet" href="{{asset('css/app.css')}}">
+
 
     </head>
     <body>
-        <h1>Fashion Shop</h1>
 
-        <ul>
-            @foreach ($dresses as $dress)
-                <li>
-                    <p>{{$dress->brand}}</p>
-                    <p>Type: {{$dress->type}}</p>
-                    <p>Color: {{$dress->color}}</p>
-                </li>
-            @endforeach
-        </ul>
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+                <span class="navbar-brand mb-0 h1">Fashion Shop</span>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="row pt-3">
+                @foreach ($dresses as $dress)
+                    <div class="col-sm pt-4">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    Brand: {{$dress->brand}}
+                                </h5>
+                                <p class="card-text">
+                                    Type: {{$dress->type}}
+                                </p>
+                                <p class="card-text">
+                                    Color: {{$dress->color}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
 
     </body>
 </html>
